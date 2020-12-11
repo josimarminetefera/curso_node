@@ -1,12 +1,12 @@
-//microserviço que toma conta de rotas e views
+//MICROSERVIÇO QUE TOMA CONTA DE ROTAS E VIEWS
 const express = require('express');
-//executa o express
+//EXECUTA O EXPRESS
 const app = express();
 //ROTA RAIS http://localhost:3001/
 app.get('/', (req, res) => {
-    //quando acessamos link do site damos f5 estamos acessando o servidor e o req tem todos detalhes desta requizição (parametros usuário autenticação body ip)
-    //res é para retornar os dados
+    //QUANDO ACESSAMOS LINK DO SITE DAMOS F5 ESTAMOS ACESSANDO O SERVIDOR E O REQ TEM TODOS DETALHES DESTA REQUIZIÇÃO (PARAMETROS USUÁRIO AUTENTICAÇÃO BODY IP)
+    //RES É PARA RETORNAR OS DADOS
     res.send('Olá Teste');
 });
-//falo para a aplicação olvir a porta 3001
+//FALO PARA A APLICAÇÃO OUVIR A PORTA 3001
 app.listen(3001);
