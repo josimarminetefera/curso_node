@@ -27,14 +27,14 @@ requiredir('./src/models');
 const Produto = mongoose.model('Produto');
 
 //CASO VOCE ACESSE http://localhost:3001/ ELE VAI CRIAR ESTE PRODUTO 
-app.get("/", (req, res) => {
-    Produto.create({
-        titulo: "Celular Doido",
-        descricao: "Celular do Baoum",
-        url: "https://st.depositphotos.com"
-    });
-    return res.send('Olá Josimar ');
-});
+// app.get("/", (req, res) => {
+//     Produto.create({
+//         titulo: "Celular Doido",
+//         descricao: "Celular do Baoum",
+//         url: "https://st.depositphotos.com"
+//     });
+//     return res.send('Olá Josimar ');
+// });
 
 //FALO PARA A APLICAÇÃO OUVIR A PORTA 3001
 app.listen(3001);
