@@ -1,4 +1,4 @@
-const express = require("Express");
+const express = require("express");
 const rotas = express.Router();
 
 const ProdutoController = require("./controllers/ProdutoController");
