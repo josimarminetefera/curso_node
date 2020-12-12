@@ -10,6 +10,9 @@ const requiredir = require('require-dir');
 //EXECUTA O EXPRESS
 const app = express();
 
+//APOS INICIAR O APP TEM QUE FALAR QUE SEJA PERMITIDO ENVIAR DADOS PARA A MINHA APLICAÇÃO NO FORMATO JSON
+app.use(express.json());
+
 //INICIANDO O BANCO DE DADOS
 mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true });
 

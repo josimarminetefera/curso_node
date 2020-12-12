@@ -4,7 +4,11 @@ const rotas = express.Router();
 const ProdutoController = require("./controllers/ProdutoController");
 
 //CRIANDO ROTA RAIZ DO PROJETO
-rotas.get('/produtos', ProdutoController.index);
+rotas.get('/produtos', ProdutoController.listar);
+
+//ROTA PARA CRIAR UMA NOVO PRODUTO 
+rotas.post('/produtos', ProdutoController.criar);
+
 
 //EXPORTA AS ROTAS PARA SER USADO FORA DESTE ARQUIVO
 module.exports = rotas;
