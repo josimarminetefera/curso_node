@@ -7,7 +7,15 @@ module.exports = {
     //TODOS REGISTROS DE PRODUTOS DENTRO DA NOSSA BASE DE DADOS
     //TESTE QUANDO ENTRAR NO LINK http://localhost:3001/api/produtos
     async listar(req, res) {
-        const produtos = await Produto.find({});
+        //{PAGE} ESTE É UM RECURSO CHAMADO RE
+        //QUERY SÃO PARA PARAMETROS GET
+        //BODY É PARA O CORPO DA REQUISIÇÃO
+        //PARAMS É PARA OS ID: DEFINIDO NA ROTA
+        //QUERY PARAMETROS GET /produtos?pagina=2
+        const { pagina = 1 } = req.query;
+        //PAGINATE ({FUNCOES, WHERES}, {PAGINA ATUAL, TAMANHO QUE EU QUERO NO MAXIMO})
+        //FOI USADO EM PAGE O RECURSO SHORT SINTAX QUE SUBISTITUI COISAS COMO PAGE:PAGE
+        const produtos = await Produto.paginate({}, { page: pagina, limit: 10 });
         return res.json(produtos);
     },
 

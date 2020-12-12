@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+//PAGINAÇÃO DO LISTAR
+const mongoosePaginate = require('mongoose-paginate')
 
 const ProdutoSchema = new mongoose.Schema({
     titulo: {
@@ -18,6 +20,9 @@ const ProdutoSchema = new mongoose.Schema({
         default: Date.now,//DATA ATUAL QUE O REGISTRO FOI CRIADO 
     }
 });
+
+//ATRIBUINDO O PLUGIN DE PAGINAÇÃO AO MODEL
+ProdutoSchema.plugin(mongoosePaginate);
 
 //REGISTRAR O MODEL NA APLICAÇÃO COM A BASE DE DADOS
 //TODA A APLICAÇÃO VAI SABER QUE EXISTE UM MODEL PRODUTO QUE POSSUI ESTAS PROPRIEDADES AQUI 
