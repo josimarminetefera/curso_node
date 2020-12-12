@@ -9,9 +9,19 @@ rotas.get('/produtos', ProdutoController.listar);
 //ROTA PARA CRIAR UMA NOVO PRODUTO 
 rotas.post('/produtos', ProdutoController.criar);
 
+//ROTA PARA VISUALIZAR O PRODUTO :id REPRESENTA O PARAMETRO QUE VIRA DEPOIS DA /
+rotas.get('/produtos/:id', ProdutoController.visualizar);
+
+//ROTA DE ATUALIZAÇÃO DO PRODUTO USA PUT
+//PARA PASSAR O PARAMETRO VOCE USA :
+rotas.put('/produtos/:id', ProdutoController.alterar);
+
+//ROTA PARA DELETAR
+rotas.delete('/produtos/:id', ProdutoController.deletar);
 
 //EXPORTA AS ROTAS PARA SER USADO FORA DESTE ARQUIVO
 module.exports = rotas;
+
 
 
 
@@ -34,3 +44,13 @@ module.exports = rotas;
 //     });
 //     return res.send('Olá Josimar ');
 // });
+
+//REQUISITANDO A RAIZ DO LINK PRINCIPAL
+//routes.get('/', (req, res) => {
+  //Produto.create({
+  //  titulo: 'Josimar Minete',
+  //  descricao: 'Este é um cara legal',
+  //  url: 'www.josimarminete.com.br',
+  //});
+  //return res.send("Olá Josimar Minete");
+//})
