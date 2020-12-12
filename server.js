@@ -1,6 +1,9 @@
 //MICROSERVIÇO QUE TOMA CONTA DE ROTAS E VIEWS
 const express = require('express');
 
+//BIBLIOTECA PARA PERMITIR ACESSO A OUTROS DOMINIOS
+const cors = require('cors');
+
 //IMPORTAR O GERENCIADOR DE BANCO
 const mongoose = require('mongoose');
 
@@ -12,6 +15,9 @@ const app = express();
 
 //APOS INICIAR O APP TEM QUE FALAR QUE SEJA PERMITIDO ENVIAR DADOS PARA A MINHA APLICAÇÃO NO FORMATO JSON
 app.use(express.json());
+
+//ADICIONADO CORS EM {} FICA TODOS DOMINIOS QUE VOCE VAI DAR ACESSO E MAIS ALGUMAS CONFIGURAÇÕES DE SEGURANÇA
+app.use(cors({}));
 
 //INICIANDO O BANCO DE DADOS
 mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true, useUnifiedTopology: true });
