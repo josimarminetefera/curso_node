@@ -1,3 +1,4 @@
+console.log("Produto.js - ABRINDO MODEL DE PRODUTO");
 const mongoose = require('mongoose');
 //PAGINAÇÃO DO LISTAR
 const mongoosePaginate = require('mongoose-paginate')

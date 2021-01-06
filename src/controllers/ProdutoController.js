@@ -1,3 +1,4 @@
+console.log("ProdutoController.js - ABRINDO CONTROLLER DE PRODUTO");
 const mongoose = require('mongoose');
 
 //IMPORTAR O MODEL DE PRODUTO 
@@ -7,6 +8,7 @@ module.exports = {
     //TODOS REGISTROS DE PRODUTOS DENTRO DA NOSSA BASE DE DADOS
     //TESTE QUANDO ENTRAR NO LINK http://localhost:3001/api/produtos
     async listar(req, res) {
+        console.log("ProdutoController.js - FUNÇÃO listar");
         //{PAGE} ESTE É UM RECURSO CHAMADO RE
         //QUERY SÃO PARA PARAMETROS GET
         //BODY É PARA O CORPO DA REQUISIÇÃO
@@ -20,6 +22,7 @@ module.exports = {
     },
 
     async criar(req, res) {
+        console.log("ProdutoController.js - FUNÇÃO criar");
         //TODOS OS DADOS QUE NOS PRECISAMOS ESTÁ EM REQ.BODY
         const produto = await Produto.create(req.body);
         //RETORNAR O PRODUTO QUE ACABOU DE SER ADICIONADO NA NOSSA BASE DE DADOS
@@ -27,12 +30,14 @@ module.exports = {
     },
 
     async visualizar(req, res) {
+        console.log("ProdutoController.js - FUNÇÃO visualizar");
         //req.params É PARA PEGAR OS PARAMETROS
         const produto = await Produto.findById(req.params.id);
         return res.json(produto);
     },
 
     async alterar(req, res) {
+        console.log("ProdutoController.js - FUNÇÃO alterar");
         //VAI ATUALIZAR COM O QUE VEM NO CORPO DE ACORDO COM O ID DE PARAMETRO
         // { new: true } para fazer o commit e voltar o produto atualizado, exemplo se eu não usar e alterar vai retornar os dados anteriores e não os atualizados.
         //preciso buscar um unico produto pelo params e atualizando com todo o body
@@ -41,6 +46,7 @@ module.exports = {
     },
 
     async deletar(req, res) {
+        console.log("ProdutoController.js - FUNÇÃO deletar");
         await Produto.findByIdAndDelete(req.params.id);
         //res.send() RESPOSTA VAZIA PARA PELO MENOS MOSTRAR ALGUMA INTERAÇÃO
         return res.send();

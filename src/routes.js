@@ -1,8 +1,10 @@
+console.log("routs.js - INICIANDO ROTAS");
 const express = require("express");
 const rotas = express.Router();
 
 const ProdutoController = require("./controllers/ProdutoController");
 
+console.log("routs.js - CRIANDO CADA UMA DAS ROTA");
 //CRIANDO ROTA RAIZ DO PROJETO
 rotas.get('/produtos', ProdutoController.listar);
 
