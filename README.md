@@ -1,2 +1,2 @@
-Projeto básico sobre NodeJs com mongodb e crud para produtos.
+Projeto básico em NodeJs com mongodb e crud para produtos.
  
